@@ -2,7 +2,7 @@ Name,ShortName,ModeAndPID,Equation,Min Value,Max Value,Units,Header
 Battery Current,current,2101,((Signed(K)*256)+L)/10,-230,230,A,7E4
 Battery Voltage,voltage,2101,((m<8)+n)/10,268.8,403.2,V,7E4
 Battery Temperature,batt_temp,2101,(Signed(O) + Signed(P))/2,-40,80,C,7E4
-VMCU Ambient temp,ext_temp,2180,(signed(m)-80)/2),-40,80,C,7E6
+VMCU Ambient temp,ext_temp,2100,G/2-40,-40,80,C,7B3
 VMCU Real Vehicle Speed,speed,2101,((Signed(O)*256)+N)/100*1.609,0,290,km/h,7E2
 Cumulative Energy Charged,kwh_charged,2101,((am<24)+(an<16)+(ao<8)+ap)/10,0,1000000,kWh,7E4
 Ignition on,is_driving,2101,{ay:2} && ({f:3} || {f:1}),0,1,,7E4
