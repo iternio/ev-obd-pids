@@ -1,0 +1,115 @@
+Name,ShortName,ModeAndPID,Equation,Min Value,Max Value,Units,Header
+Battery Current,current,0x220101,((Signed(K)*256)+L)/10,-230,230,A,7E4
+Battery DC Voltage,voltage,0x220101,((m<8)+n)/10,268.8,403.2,V,7E4
+Battery Temperature,batt_temp,0x220101,(Signed(O) + Signed(P))/2,-40,80,C,7E4
+Outdoor Temperature,ext_temp,0x220100,(G/2)-40,-50,50,C,7B3
+Cumulative Energy Charged,kwh_charged,0x220101,((am<24)+(an<16)+(ao<8)+ap)/10,0,1000000,kWh,7E4
+Ignition on,is_driving,0x220101,{ay:2} && ({f:3} || {f:1}),0,1,,7E4
+Is Charging,is_charging,0x220101,(!{ay:2} || {j:0}) && (((Signed(K)*256)+L)/10 < 0.0),0,1,,7E4
+State of Charge Display,soc,0x220105,af/2,0,100,%,7E4
+State of Health,soh,0x220105,((z<8)+aa)/10,0,100,%,7E4
+Odometer,odometer,0x22B002,INT24(g:h:i),0,16777215,km,7c6
+Battery Max Temperature,batt_temp_max,0x220101,Signed(O),-40,80,C,7E4
+Battery Min Temperature,batt_temp_min,0x220101,Signed(P),-40,80,C,7E4
+Battery Module 01 Temperature,batt_temp1,0x220101,Signed(Q),-40,80,C,7E4
+Battery Module 02 Temperature,batt_temp2,0x220101,Signed(R),-40,80,C,7E4
+Battery Module 03 Temperature,batt_temp3,0x220101,Signed(S),-40,80,C,7E4
+Battery Module 04 Temperature,batt_temp4,0x220101,Signed(T),-40,80,C,7E4
+Cell Voltage 01,cell_01_volts,0x220102,e/50,2.80,4.20,V,7E4
+Cell Voltage 02,cell_02_volts,0x220102,f/50,2.80,4.20,V,7E4
+Cell Voltage 03,cell_03_volts,0x220102,g/50,2.80,4.20,V,7E4
+Cell Voltage 04,cell_04_volts,0x220102,h/50,2.80,4.20,V,7E4
+Cell Voltage 05,cell_05_volts,0x220102,i/50,2.80,4.20,V,7E4
+Cell Voltage 06,cell_06_volts,0x220102,j/50,2.80,4.20,V,7E4
+Cell Voltage 07,cell_07_volts,0x220102,k/50,2.80,4.20,V,7E4
+Cell Voltage 08,cell_08_volts,0x220102,l/50,2.80,4.20,V,7E4
+Cell Voltage 09,cell_09_volts,0x220102,m/50,2.80,4.20,V,7E4
+Cell Voltage 10,cell_10_volts,0x220102,n/50,2.80,4.20,V,7E4
+Cell Voltage 11,cell_11_volts,0x220102,o/50,2.80,4.20,V,7E4
+Cell Voltage 12,cell_12_volts,0x220102,p/50,2.80,4.20,V,7E4
+Cell Voltage 13,cell_13_volts,0x220102,q/50,2.80,4.20,V,7E4
+Cell Voltage 14,cell_14_volts,0x220102,r/50,2.80,4.20,V,7E4
+Cell Voltage 15,cell_15_volts,0x220102,s/50,2.80,4.20,V,7E4
+Cell Voltage 16,cell_16_volts,0x220102,t/50,2.80,4.20,V,7E4
+Cell Voltage 17,cell_17_volts,0x220102,u/50,2.80,4.20,V,7E4
+Cell Voltage 18,cell_18_volts,0x220102,v/50,2.80,4.20,V,7E4
+Cell Voltage 19,cell_19_volts,0x220102,w/50,2.80,4.20,V,7E4
+Cell Voltage 20,cell_20_volts,0x220102,x/50,2.80,4.20,V,7E4
+Cell Voltage 21,cell_21_volts,0x220102,y/50,2.80,4.20,V,7E4
+Cell Voltage 22,cell_22_volts,0x220102,z/50,2.80,4.20,V,7E4
+Cell Voltage 23,cell_23_volts,0x220102,aa/50,2.80,4.20,V,7E4
+Cell Voltage 24,cell_24_volts,0x220102,ab/50,2.80,4.20,V,7E4
+Cell Voltage 25,cell_25_volts,0x220102,ac/50,2.80,4.20,V,7E4
+Cell Voltage 26,cell_26_volts,0x220102,ad/50,2.80,4.20,V,7E4
+Cell Voltage 27,cell_27_volts,0x220102,ae/50,2.80,4.20,V,7E4
+Cell Voltage 28,cell_28_volts,0x220102,af/50,2.80,4.20,V,7E4
+Cell Voltage 29,cell_29_volts,0x220102,ag/50,2.80,4.20,V,7E4
+Cell Voltage 30,cell_30_volts,0x220102,ah/50,2.80,4.20,V,7E4
+Cell Voltage 31,cell_31_volts,0x220102,ai/50,2.80,4.20,V,7E4
+Cell Voltage 32,cell_32_volts,0x220102,aj/50,2.80,4.20,V,7E4
+Cell Voltage 33,cell_33_volts,0x220103,e/50,2.80,4.20,V,7E4
+Cell Voltage 34,cell_34_volts,0x220103,f/50,2.80,4.20,V,7E4
+Cell Voltage 35,cell_35_volts,0x220103,g/50,2.80,4.20,V,7E4
+Cell Voltage 36,cell_36_volts,0x220103,h/50,2.80,4.20,V,7E4
+Cell Voltage 37,cell_37_volts,0x220103,i/50,2.80,4.20,V,7E4
+Cell Voltage 38,cell_38_volts,0x220103,j/50,2.80,4.20,V,7E4
+Cell Voltage 39,cell_39_volts,0x220103,k/50,2.80,4.20,V,7E4
+Cell Voltage 40,cell_40_volts,0x220103,l/50,2.80,4.20,V,7E4
+Cell Voltage 41,cell_41_volts,0x220103,m/50,2.80,4.20,V,7E4
+Cell Voltage 42,cell_42_volts,0x220103,n/50,2.80,4.20,V,7E4
+Cell Voltage 43,cell_43_volts,0x220103,o/50,2.80,4.20,V,7E4
+Cell Voltage 44,cell_44_volts,0x220103,p/50,2.80,4.20,V,7E4
+Cell Voltage 45,cell_45_volts,0x220103,q/50,2.80,4.20,V,7E4
+Cell Voltage 46,cell_46_volts,0x220103,r/50,2.80,4.20,V,7E4
+Cell Voltage 47,cell_47_volts,0x220103,s/50,2.80,4.20,V,7E4
+Cell Voltage 48,cell_48_volts,0x220103,t/50,2.80,4.20,V,7E4
+Cell Voltage 49,cell_49_volts,0x220103,u/50,2.80,4.20,V,7E4
+Cell Voltage 50,cell_50_volts,0x220103,v/50,2.80,4.20,V,7E4
+Cell Voltage 51,cell_51_volts,0x220103,w/50,2.80,4.20,V,7E4
+Cell Voltage 52,cell_52_volts,0x220103,x/50,2.80,4.20,V,7E4
+Cell Voltage 53,cell_53_volts,0x220103,y/50,2.80,4.20,V,7E4
+Cell Voltage 54,cell_54_volts,0x220103,z/50,2.80,4.20,V,7E4
+Cell Voltage 55,cell_55_volts,0x220103,aa/50,2.80,4.20,V,7E4
+Cell Voltage 56,cell_56_volts,0x220103,ab/50,2.80,4.20,V,7E4
+Cell Voltage 57,cell_57_volts,0x220103,ac/50,2.80,4.20,V,7E4
+Cell Voltage 58,cell_58_volts,0x220103,ad/50,2.80,4.20,V,7E4
+Cell Voltage 59,cell_59_volts,0x220103,ae/50,2.80,4.20,V,7E4
+Cell Voltage 60,cell_60_volts,0x220103,af/50,2.80,4.20,V,7E4
+Cell Voltage 61,cell_61_volts,0x220103,ag/50,2.80,4.20,V,7E4
+Cell Voltage 62,cell_62_volts,0x220103,ah/50,2.80,4.20,V,7E4
+Cell Voltage 63,cell_63_volts,0x220103,ai/50,2.80,4.20,V,7E4
+Cell Voltage 64,cell_64_volts,0x220103,aj/50,2.80,4.20,V,7E4
+Cell Voltage 65,cell_65_volts,0x220104,e/50,2.80,4.20,V,7E4
+Cell Voltage 66,cell_66_volts,0x220104,f/50,2.80,4.20,V,7E4
+Cell Voltage 67,cell_67_volts,0x220104,g/50,2.80,4.20,V,7E4
+Cell Voltage 68,cell_68_volts,0x220104,h/50,2.80,4.20,V,7E4
+Cell Voltage 69,cell_69_volts,0x220104,i/50,2.80,4.20,V,7E4
+Cell Voltage 70,cell_70_volts,0x220104,j/50,2.80,4.20,V,7E4
+Cell Voltage 71,cell_71_volts,0x220104,k/50,2.80,4.20,V,7E4
+Cell Voltage 72,cell_72_volts,0x220104,l/50,2.80,4.20,V,7E4
+Cell Voltage 73,cell_73_volts,0x220104,m/50,2.80,4.20,V,7E4
+Cell Voltage 74,cell_74_volts,0x220104,n/50,2.80,4.20,V,7E4
+Cell Voltage 75,cell_75_volts,0x220104,o/50,2.80,4.20,V,7E4
+Cell Voltage 76,cell_76_volts,0x220104,p/50,2.80,4.20,V,7E4
+Cell Voltage 77,cell_77_volts,0x220104,q/50,2.80,4.20,V,7E4
+Cell Voltage 78,cell_78_volts,0x220104,r/50,2.80,4.20,V,7E4
+Cell Voltage 79,cell_79_volts,0x220104,s/50,2.80,4.20,V,7E4
+Cell Voltage 80,cell_80_volts,0x220104,t/50,2.80,4.20,V,7E4
+Cell Voltage 81,cell_81_volts,0x220104,u/50,2.80,4.20,V,7E4
+Cell Voltage 82,cell_82_volts,0x220104,v/50,2.80,4.20,V,7E4
+Cell Voltage 83,cell_83_volts,0x220104,w/50,2.80,4.20,V,7E4
+Cell Voltage 84,cell_84_volts,0x220104,x/50,2.80,4.20,V,7E4
+Cell Voltage 85,cell_85_volts,0x220104,y/50,2.80,4.20,V,7E4
+Cell Voltage 86,cell_86_volts,0x220104,z/50,2.80,4.20,V,7E4
+Cell Voltage 87,cell_87_volts,0x220104,aa/50,2.80,4.20,V,7E4
+Cell Voltage 88,cell_88_volts,0x220104,ab/50,2.80,4.20,V,7E4
+Cell Voltage 89,cell_89_volts,0x220104,ac/50,2.80,4.20,V,7E4
+Cell Voltage 90,cell_90_volts,0x220104,ad/50,2.80,4.20,V,7E4
+Cell Voltage 91,cell_91_volts,0x220104,ae/50,2.80,4.20,V,7E4
+Cell Voltage 92,cell_92_volts,0x220104,af/50,2.80,4.20,V,7E4
+Cell Voltage 93,cell_93_volts,0x220104,ag/50,2.80,4.20,V,7E4
+Cell Voltage 94,cell_94_volts,0x220104,ah/50,2.80,4.20,V,7E4
+Cell Voltage 95,cell_95_volts,0x220104,ai/50,2.80,4.20,V,7E4
+Cell Voltage 96,cell_96_volts,0x220104,aj/50,2.80,4.20,V,7E4
+Cell Voltage 97,cell_97_volts,0x220105,ai/50,2.80,4.20,V,7E4
+Cell Voltage 98,cell_98_volts,0x220105,aj/50,2.80,4.20,V,7E4
