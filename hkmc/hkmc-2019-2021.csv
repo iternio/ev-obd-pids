@@ -2,7 +2,7 @@ Name,ShortName,ModeAndPID,Equation,Min Value,Max Value,Units,Header
 Battery Current,current,0x220101,((Signed(K)*256)+L)/10,-230,230,A,7E4
 Battery DC Voltage,voltage,0x220101,((m<8)+n)/10,268.8,403.2,V,7E4
 Battery Temperature,batt_temp,0x220101,(Signed(O) + Signed(P))/2,-40,80,C,7E4
-Outdoor Temperature,ext_temp,0x220100,(G/2)-40,-50,50,C,7B3
+Outdoor Temperature,ext_temp,0x220100,(G/2)-40,-40,80,C,7B3
 Cumulative Energy Charged,kwh_charged,0x220101,((am<24)+(an<16)+(ao<8)+ap)/10,0,1000000,kWh,7E4
 Ignition on,is_driving,0x220101,{ay:2} && ({f:3} || {f:1}),0,1,,7E4
 Is Charging,is_charging,0x220101,(!{ay:2} || {j:0}) && (((Signed(K)*256)+L)/10 < 0.0),0,1,,7E4
