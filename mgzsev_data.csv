@@ -1,0 +1,48 @@
+Name," ""ShortName"""," ""ModeAndPID"""," ""Equation"""," ""Min Value"""," ""Max Value"""," ""Units"""," ""Header"""," ""startDiagnostic"""," ""stopDiagnostic"""," ""Scale"""
+MGZSEV_HV_Current,Current,0x22b043,(INT16(A:B)-40000)/40,-100,100,A,781,,,1
+MGZSEV_SOH,SoH,0x22b061,INT16(A:B)/100,0,100,%,781,,,1
+MGZSEV_HV_Battery_Temp,Batt Temp,0x22b056,(A/2)-40,0,50,c,781,,,1
+MGZSEV_HV_Battery_Volts,HV Volts,0x22b042,INT16(A:B)/4,300,480,V,781,,,1
+MGZSEV_Batt Coolant,Batt Coolant,0x22b05c,(A/2)-40,0,50,c,781,,,1
+MGZSEV_Status,Status,0x22b048,LOOKUP(A:A:1='ready/idle off':3='running':6='charging':7='charging':10='connected not charging'),0,100,Status,781,,,1
+MGZSEV_12v_Battery Volts,12v Batt,0x22b584,INT16(A:B)/10,10,15,V,7E3,,,1
+MGZSEV_Tyre_Pressure_Front_Left,TP FL,0x22b001,A*4,0,300,kPa,724,,,1
+MGZSEV_Tyre_Pressure_Front_Right,TP FR,0x22b001,B*4,0,300,kPa,724,,,1
+MGZSEV_Tyre_Pressure_Rear_Right,TP RR,0x22b001,C*4,0,300,kPa,724,,,1
+MGZSEV_Tyre_Pressure_Rear_Left,TP RL,0x22b001,D*4,0,300,kPa,724,,,1
+MGZSEV_Outside Temp,Outside,0x22bb05,A-40,0,50,c,7E3,,,1
+MGZSEV_Charging_Rate,Dis   Chg,,(VAL{MGZSEV_HV_Battery_Volts}*VAL{MGZSEV_HV_Current}/1000)*-1,-80,80,kW,,,,1
+MGZSEV_Range_60MPH,Range,,(42*VAL{MGZSEV_Cons_60MPH})*(1-((25-VAL{XX_OAT_Factored})*1.3/100))*(VAL{MGZSEV_SoC_Display}/100)*(VAL{MGZSEV_SOH}/100),0,200,max 60mph,,,,1
+MGZSEV_Target_Cons_60MPH,Target m/kwh,,VAL{MGZSEV_Range_60MPH}/(42*(VAL{MGZSEV_SOC_Display}/100)),0,10,max 60mph,,,,1
+MGZSEV_Range_70MPH,Range,,(42*VAL{XX_Cons_70MPH})*(1-((25-VAL{XX_OAT_Factored})*1.3/100))*(VAL{MGZSEV_SoC_Display}/100)*(VAL{MGZSEV_SOH}/100),0,200,max 70mph,,,,1
+MGZSEV_Target_Cons_70MPH,Target m/kwh,,VAL{MGZSEV_Range_70MPH}/(42*(VAL{MGZSEV_SOC_Display}/100)),0,10,max 70mph,,,,1
+MGZSEV_SoC_Display,SoC,,LOOKUP(1.1*(VAL{XX_Raw_SOC}+VAL{XX_BMS_Version_SoC _Factor})::-10~0=0:100~110=100),0,100,Batt %,,,,1
+MGZSEV_Cons_60MPH,Cons 60,,4,0,10,m/Kwh,,,,1
+MGZSEV_Range_Charger_To_Charger,Charger,,((42*VAL{MGZSEV_Cons_60MPH})*(1-((25-VAL{XX_OAT_Factored})/100)))*(85-15)/100,1,200,Range,,,,1
+MGZSEV_BMS_SW_Ver,BMS SW,,LOOKUP(VAL{XX_BMS_SW_Ver_Raw}:'???':4272177='A01':5386551='R17':4543793='EU1':5387312='R40':5386808='R28':5387058='R32':5255225='P09'),0,1,,,,,1
+MGZSEV_ BMS CMU1 Error,CMU1 Error,0x22b001,INT16(C:D)/2000 - INT16(A:B)/2000,0,5,v,781,,,1
+MGZSEV_ BMS CMU2 Error,CMU2 Error,0x22b009,INT16(C:D)/2000 - INT16(A:B)/2000,0,5,v,781,,,1
+MGZSEV_ BMS CMU3 Error,CMU3 Error,0x22b011,INT16(C:D)/2000 - INT16(A:B)/2000,0,5,v,781,,,1
+MGZSEV_ BMS CMU4 Error,CMU4 Error,0x22b019,INT16(C:D)/2000 - INT16(A:B)/2000,0,5,v,781,,,1
+MGZSEV_ BMS CMU5 Error,CMU5 Error,0x22b021,INT16(C:D)/2000 - INT16(A:B)/2000,0,5,v,781,,,1
+MGZSEV_ BMS CMU6 Error,CMU6 Error,0x22b029,INT16(C:D)/2000 - INT16(A:B)/2000,0,5,v,781,,,1
+MGZSEV_ BMS CMU7 Error,CMU7 Error,0x22b0a3,INT16(C:D)/2000 - INT16(A:B)/2000,0,5,v,781,,,1
+MGZSEV_ BMS CMU8 Error,CMU8 Error,0x22b0ab,INT16(C:D)/2000 - INT16(A:B)/2000,0,5,v,781,,,1
+MGZSEV_ BMS CMU9 Error,CMU9 Error,0x22b0b3,INT16(C:D)/2000 - INT16(A:B)/2000,0,5,v,781,,,1
+MGZSEV_BMS CMU Balance Error,Bal Error,,(VAL{MGZSEV_ BMS CMU1 Error}+VAL{MGZSEV_ BMS CMU2 Error}+VAL{MGZSEV_ BMS CMU3 Error}+VAL{MGZSEV_ BMS CMU4 Error}+VAL{MGZSEV_ BMS CMU5 Error}+VAL{MGZSEV_ BMS CMU6 Error}+VAL{MGZSEV_ BMS CMU7 Error}+VAL{MGZSEV_ BMS CMU8 Error}+VAL{MGZSEV_ BMS CMU9 Error})/9,0,1,v,,,,1
+MGZSEV_Battery_Balance,Batt Balance %,,(1-VAL{MGZSEV_BMS CMU Balance Error}*(4.2-3))*100,0,100,%,,,,1
+MGZSEV_Vehicle_Speed,Speed,0x22ba00,ABS(((INT16(A:B)-20000)/100)*0.625),0,100,mph,7E3,,,1
+MGZSEV_HVAC Vent Selection,Air Vents,0x22e007,LOOKUP(A::0='Vents':1='Floor/Vents':2='Floor':3='Screen/Floor':4='Screen':6='OFF'),0,6,,750,,,1
+MGZSEV_HVAC Temp,HVAC Temp,0x22e013,INT16(A:B)/10-30,0,100,C,750,,,1
+MGZSEV_HVAC Fan Speed,Fan Speed,0x22e00f,LOOKUP(B:B:249='1':43='2':100='3':207='4':129='5':182='6'),0,1000,,750,,,1
+MGZSEV_Cabin Ricirculation,Recirc,0x22e01e,LOOKUP(A::1='Fresh':0='Recirc'),0,6,,750,,,1
+MGZSEV_Screen Demist,Fwd Demist,0x22e02c,LOOKUP(A::0='OFF':1~1000='ON'),0,100,,750,,,1
+MGZSEV_Air Con,A/C,0x22e02d,LOOKUP(A::64='ON':0='OFF'),0,100,,750,,,1
+MGZSEV_HVAC System,HVAC,0x22e037,LOOKUP(A::1='ON':0='OFF'),0,100,,750,,,1
+MGZSEV_Rear Demist,Rear Demist,0x22e038,LOOKUP(A::1='ON':0='OFF'),0,100,,750,,,1
+XX_BMS_SW_Ver_Raw,not for display,0x22f194,INT24(H:I:J),0,1000000,,781,,,1
+XX_Raw_SOC,not for display,0x22b046,INT16(A:B)/10,0,100,%,781,,,1
+XX_OAT_Factored,not for display,,LOOKUP(VAL{MGZSEV_Outside Temp}::25~50=25),-10,50,C,,,,1
+XX_Cons_70MPH,not for display,,VAL{MGZSEV_Cons_60MPH}/((70/60)*(70/60)),1,10,m/Kwh,,,,1
+XX_BMS_Version_SoC _Factor,not for display,,LOOKUP(VAL{MGZSEV_BMS_SW_Ver}:-2:5386551=-5:5387312=-5:5386808=-5:5387058=-3:5255225=-5),-100,100,,,,,1
+XXX_MGZSEV_PIDsFile_Ver,PIDs Ver,,3,1,100,,,,,1
