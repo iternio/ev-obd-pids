@@ -1,5 +1,5 @@
 # EV-OBD-PIDs
-This repository contains a consolidation of the various OBD PID lists that are available openly on the internet for Electric Vehicles, formatted such that they can be imported by Torque or other similar OBD reading applications.
+This repository contains a consolidation of the various OBD PID lists that are available openly on the internet for Electric Vehicles, formatted such that they can be imported by A Better Routeplanner's OBD integration. 
 
 Many thanks to the hard work by those who have reverse engineered the PIDs for various manufacturers and contributed to this repository.
 

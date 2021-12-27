@@ -1,0 +1,102 @@
+{
+  "init_commands": {
+    "command": ["ATZ", "ATD", "ATE0", "ATS0", "ATAL", "ATSP0"]
+  },
+  "obd_protocol": "7",
+  "data_commands": {
+    "command": [
+      "ATSH7E0",
+      "22000D",
+      "ATSH7E1",
+      "222414",
+      "222885",
+      "222889",
+      "ATSH7E4",
+      "22801F",
+      "22434F",
+      "224531",
+      "2241A3",
+      "228334"
+    ]
+  },
+  "current": {
+    "equation": "(Signed(A)*256+B)/20",
+    "minValue": "-500",
+    "maxValue": "500",
+    "type": "Number",
+    "command": "222414",
+    "ecu": "7E1"
+  },
+  "voltage": {
+    "equation": "((A*256)+B)/100",
+    "minValue": "300",
+    "maxValue": "500",
+    "type": "Number",
+    "command": "222885",
+    "ecu": "7E1"
+  },
+  "ext_temp": {
+    "equation": "(A/2)-40",
+    "minValue": "-40",
+    "maxValue": "100",
+    "type": "Number",
+    "command": "22801F",
+    "ecu": "7E4"
+  },
+  "batt_temp": {
+    "equation": "A-40",
+    "minValue": "-40",
+    "maxValue": "80",
+    "type": "Number",
+    "command": "22434F",
+    "ecu": "7E4"
+  },
+  "is_charging": {
+    "equation": "(A==1)||(A==2)||(A==3)",
+    "minValue": "0",
+    "maxValue": "1",
+    "type": "Boolean",
+    "command": "224531",
+    "ecu": "7E4"
+  },
+  "is_dcfc": {
+    "equation": "(A==3)",
+    "minValue": "0",
+    "maxValue": "1",
+    "type": "Boolean",
+    "command": "224531",
+    "ecu": "7E4"
+  },
+  "capacity": {
+    "equation": "((A*256)+B)*0.032",
+    "minValue": "30",
+    "maxValue": "70",
+    "type": "Number",
+    "command": "2241A3",
+    "ecu": "7E4"
+  },
+  "soc": {
+    "equation": "A*100/255",
+    "minValue": "-5",
+    "maxValue": "105",
+    "type": "Number",
+    "command": "228334",
+    "ecu": "7E4"
+  },
+  "is_parked": {
+    "equation": "A==8",
+    "minValue": "0",
+    "maxValue": "1",
+    "type": "Boolean",
+    "command": "222889",
+    "ecu": "7E1"
+  },
+  "speed": {
+    "equation": "A",
+    "minValue": "0",
+    "maxValue": "200",
+    "type": "Number",
+    "command": "22000D",
+    "ecu": "7E0"
+  }
+}

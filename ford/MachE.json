@@ -1,0 +1,103 @@
+{
+  "init_commands": {
+    "command": ["ATZ", "ATD", "ATE0", "ATS0", "ATAL", "ATSP6"]
+  },
+  "obd_protocol": "7",
+  "data_commands": {
+    "command": [
+      "ATSH7E0",
+      "221505",
+      "ATSH7E2",
+      "22480D",
+      "224851",
+      "22DD05",
+      "ATSH7E4",
+      "224800",
+      "2248F9",
+      "22490C",
+      "224845",
+      "ATSH7E6",
+      "221E12"
+    ]
+  },
+  "current": {
+    "equation": "((signed(A)*256)+B)*0.1",
+    "minValue": "-500",
+    "maxValue": "300",
+    "type": "Number",
+    "command": "2248F9",
+    "ecu": "7E4"
+  },
+  "voltage": {
+    "equation": "((A<8)+B)*0.01",
+    "minValue": "300",
+    "maxValue": "500",
+    "type": "Number",
+    "command": "22480D",
+    "ecu": "7E4"
+  },
+  "ext_temp": {
+    "equation": "A-40",
+    "minValue": "-40",
+    "maxValue": "80",
+    "type": "Number",
+    "command": "22DD05",
+    "ecu": "7E2"
+  },
+  "batt_temp": {
+    "equation": "A-50",
+    "minValue": "-40",
+    "maxValue": "80",
+    "type": "Number",
+    "command": "224800",
+    "ecu": "7E4"
+  },
+  "is_charging": {
+    "equation": "(A==6)||(A==8)",
+    "minValue": "0",
+    "maxValue": "1",
+    "type": "Boolean",
+    "command": "224851",
+    "ecu": "7E2"
+  },
+  "is_dcfc": {
+    "equation": "A==8",
+    "minValue": "0",
+    "maxValue": "1",
+    "type": "Boolean",
+    "command": "224851",
+    "ecu": "7E2"
+  },
+  "soh": {
+    "equation": "A*0.5",
+    "minValue": "-5",
+    "maxValue": "105",
+    "type": "Number",
+    "command": "22490C",
+    "ecu": "7E4"
+  },
+  "soc": {
+    "equation": "A*0.5",
+    "minValue": "-5",
+    "maxValue": "105",
+    "type": "Number",
+    "command": "224845",
+    "ecu": "7E4"
+  },
+  "is_parked": {
+    "equation": "A==70",
+    "minValue": "0",
+    "maxValue": "1",
+    "type": "Boolean",
+    "command": "221E12",
+    "ecu": "7E6"
+  },
+  "vehicle_reported_speed": {
+    "equation": "((A<8)+B)/128",
+    "minValue": "0",
+    "maxValue": "200",
+    "type": "Number",
+    "command": "221505",
+    "ecu": "7E0"
+  }
+}

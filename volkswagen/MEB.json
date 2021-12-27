@@ -1,0 +1,65 @@
+{
+  "init_commands": {
+    "command": [
+      "ATZ",
+      "ATE0",
+      "ATL0",
+      "ATSP7",
+      "ATBI",
+      "ATSH FC007B",
+      "ATCP 17",
+      "ATCAF0",
+      "ATCF 17FE7",
+      "ATCRA17FE007B"
+    ]
+  },
+  "obd_protocol": "7",
+  "data_commands": {
+    "command": [
+      "03221E3D55555555",
+      "03221E3B55555555",
+      "0322028C55555555",
+      "0322744855555555"
+    ]
+  },
+  "current": {
+    "equation": "((A<32+B<16+C<8+D-150000)/100)*-1",
+    "minValue": "-500",
+    "maxValue": "300",
+    "type": "Number",
+    "command": "03221E3D55555555",
+    "ecu": ""
+  },
+  "voltage": {
+    "equation": "((A*256)+B)/4",
+    "minValue": "300",
+    "maxValue": "500",
+    "type": "Number",
+    "command": "03221E3B55555555",
+    "ecu": ""
+  },
+  "soc": {
+    "equation": "1.12*A/2.5-7.16",
+    "minValue": "-5",
+    "maxValue": "105",
+    "type": "Number",
+    "command": "0322028C55555555",
+    "ecu": ""
+  },
+  "is_charging": {
+    "equation": "{A:2}",
+    "minValue": "0",
+    "maxValue": "1",
+    "type": "Boolean",
+    "command": "0322744855555555",
+    "ecu": ""
+  },
+  "is_dcfc": {
+    "equation": "({A:1}&&{A:2})",
+    "minValue": "0",
+    "maxValue": "1",
+    "type": "Boolean",
+    "command": "0322744855555555",
+    "ecu": ""
+  }
+}

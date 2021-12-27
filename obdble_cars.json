@@ -1,0 +1,117 @@
+{
+  "volkswagen:egolf:*": {
+    "supports": ["calibration", "driving", "charging"],
+    "pids": "eGolf"
+  },
+  "peugeot:etraveler:*": {
+    "supports": ["calibration", "driving", "charging"],
+    "pids": "PSA"
+  },
+  "peugeot:e208:*": {
+    "supports": ["calibration", "driving", "charging"],
+    "pids": "PSA"
+  },
+  "peugeot:e2008:*": {
+    "supports": ["calibration", "driving", "charging"],
+    "pids": "PSA"
+  },
+  "citroen:ec4:*": {
+    "supports": ["calibration", "driving", "charging"],
+    "pids": "PSA"
+  },
+  "opel:corsae:*": {
+    "supports": ["calibration", "driving", "charging"],
+    "pids": "PSA"
+  },
+  "opel:mokkae:*": {
+    "supports": ["calibration", "driving", "charging"],
+    "pids": "PSA"
+  },
+  "vauxhall:corsae:*": {
+    "supports": ["calibration", "driving", "charging"],
+    "pids": "PSA"
+  },
+  "renault:zoe:20*": {
+    "supports": ["calibration", "driving", "charging"],
+    "pids": "zoe2"
+  },
+  "renault:zoe:*": {
+    "supports": ["calibration", "driving", "charging"],
+    "pids": "zoe"
+  },
+  "volkswagen:id*": {
+    "supports": ["calibration", "driving", "charging"],
+    "pids": "MEB"
+  },
+  "skoda:enyaq*": {
+    "supports": ["calibration", "driving", "charging"],
+    "pids": "MEB"
+  },
+  "cupra:born*": {
+    "supports": ["calibration", "driving", "charging"],
+    "pids": "MEB"
+  },
+  "hyundai:ioniq5:22*": {
+    "supports": ["calibration", "driving", "charging"],
+    "pids": "Ioniq5"
+  },
+  "kia:ev6:22*": {
+    "supports": ["calibration", "driving", "charging"],
+    "pids": "Ioniq5"
+  },
+  "jaguar:ipace:21*": {
+    "supports": ["calibration", "driving", "charging"],
+    "pids": "ipace2021"
+  },
+  "hyundai:ioniq:17*": {
+    "supports": ["calibration", "driving", "charging"],
+    "pids": "hkmc2017"
+  },
+  "hyundai:ioniq:19*": {
+    "supports": ["calibration", "driving", "charging"],
+    "pids": "hkmc2019"
+  },
+  "hyundai:kona*": {
+    "supports": ["calibration", "driving", "charging"],
+    "pids": "hkmc2019"
+  },
+  "kia:niro*": {
+    "supports": ["calibration", "driving", "charging"],
+    "pids": "hkmc2019"
+  },
+  "ford:mach-e*": {
+    "supports": ["calibration", "driving", "charging"],
+    "pids": "MachE"
+  },
+  "tesla:*": {
+    "supports": ["calibration", "driving", "charging"],
+    "pids": "tesla",
+    "groups": ["devel"]
+  },
+  "chevy:bolt:17*": {
+    "supports": ["calibration", "driving", "charging"],
+    "pids": "bolt17"
+  },
+  "chevy:spark:14*": {
+    "supports": ["calibration", "driving", "charging"],
+    "pids": "bolt17"
+  },
+  "chevy:bolt:19*": {
+    "supports": ["calibration", "driving", "charging"],
+    "pids": "bolt19"
+  },
+  "chevy:bolt:20*": {
+    "supports": ["calibration", "driving", "charging"],
+    "pids": "bolt19"
+  },
+  "volkswagen:eup:*": {
+    "supports": ["calibration", "driving", "charging"],
+    "pids": "eUP",
+    "groups": ["tester"]
+  },
+  "mg:zs:*": {
+    "supports": ["calibration", "driving", "charging"],
+    "pids": "mgzsev",
+    "groups": ["tester"]
+  }
+}

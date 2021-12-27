@@ -1,0 +1,88 @@
+{
+    "init_commands": {
+        "command": [
+            "ATZ",
+            "ATE0",
+            "ATL0",
+            "ATS0",
+            "ATH1",
+            "ATSTFF",
+            "ATFE",
+            "ATSP6"
+        ]
+    },
+    "obd_protocol": "6",
+    "data_commands": {
+        "command": [
+            "ATCRA7EB",
+            "220100",
+            "ATCRA7EC",
+            "220101",
+            "220105"
+        ]
+    },
+    "current": {
+        "equation": "((Signed(K)*256)+L)/10",
+        "minValue": "-230",
+        "maxValue": "230",
+        "type": "Number",
+        "command": "220101",
+        "ecu": "7EC"
+    },
+    "voltage": {
+        "equation": "((M<8)+N)/10",
+        "minValue": "268.8",
+        "maxValue": "403.2",
+        "type": "Number",
+        "command": "220101",
+        "ecu": "7EC"
+    },
+    "kwh_charged": {
+        "equation": "((am<24)+(an<16)+(ao<8)+ap)/10",
+        "minValue": "0",
+        "maxValue": "1000000",
+        "type": "Number",
+        "command": "220101",
+        "ecu": "7EC"
+    },
+    "is_charging": {
+        "equation": "(!{ay:2}&&{ay:3})",
+        "minValue": "0",
+        "maxValue": "1",
+        "type": "Boolean",
+        "command": "220101",
+        "ecu": "7EC"
+    },
+    "batt_temp": {
+        "equation": "Signed(o)",
+        "minValue": "-40",
+        "maxValue": "80",
+        "type": "Number",
+        "command": "220101",
+        "ecu": "7EC"
+    },
+    "soc": {
+        "equation": "af/2",
+        "minValue": "-5",
+        "maxValue": "105",
+        "type": "Number",
+        "command": "220105",
+        "ecu": "7EC"
+    },
+    "soh": {
+        "equation": "((z<8)+aa)/10",
+        "minValue": "0",
+        "maxValue": "100",
+        "type": "Number",
+        "command": "220105",
+        "ecu": "7EC"
+    },
+    "ext_temp": {
+        "equation": "(g/2)-40",
+        "minValue": "-50",
+        "maxValue": "50",
+        "type": "Number",
+        "command": "220100",
+        "ecu": "7EB"
+    }
+}

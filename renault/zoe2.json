@@ -1,0 +1,80 @@
+{
+    "init_commands": {
+        "command": [
+            "ATZ",
+            "ATE0",
+            "ATAL",
+            "ATCP18",
+            "ATFCSD300000",
+            "ATFCSM1",
+            "ATSP7",
+            "1003"
+        ]
+    },
+    "obd_protocol": "7",
+    "data_commands": {
+        "command": [
+            "ATSHDADAF1",
+            "ATCRA18DAF1DA",
+            "ATFCSH18DADAF1",
+            "222003",
+            "2220FE",
+            "2221CC",
+            "ATSHDADBF1",
+            "ATCRA18DAF1DB",
+            "ATFCSH18DADBF1",
+            "2291C8",
+            "229003",
+            "229001",
+            "229002"
+        ]
+    },
+    "kwh_charged": {
+        "equation": "0.001*(A*65536+B*256+C)",
+        "minValue": "0",
+        "maxValue": "60",
+        "type": "Number",
+        "command": "2291C8",
+        "ecu": "DADBF1"
+    },
+    "soh": {
+        "equation": "0.01*(A*256+B)",
+        "minValue": "0",
+        "maxValue": "105",
+        "type": "Number",
+        "command": "229003",
+        "ecu": "DADBF1"
+    },
+    "soc": {
+        "equation": "0.01*(A*256+B)",
+        "minValue": "-5",
+        "maxValue": "105",
+        "type": "Number",
+        "command": "229002",
+        "ecu": "DADAF1"
+    },
+    "vehicle_reported_speed": {
+        "equation": "0.01*(A*256+B)",
+        "minValue": "0",
+        "maxValue": "180",
+        "type": "Number",
+        "command": "222003",
+        "ecu": "DADAF1"
+    },
+    "voltage": {
+        "equation": "0.1*(A*256+B)",
+        "minValue": "300",
+        "maxValue": "480",
+        "type": "Number",
+        "command": "2220FE",
+        "ecu": "DADAF1"
+    },
+    "current": {
+        "equation": "-1*(0.25*(A*256+B)-500)",
+        "minValue": "-400",
+        "maxValue": "400",
+        "type": "Number",
+        "command": "2221CC",
+        "ecu": "DADAF1"
+    }
+}
