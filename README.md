@@ -20,8 +20,8 @@ If you'd like to add your own PID list here please submit a pull request to the 
 | \|\| | Logical Or|
 | && | Logical And |
 | == | Logical Equals|
-| < | Logical Less Than |
-| > | Logical Greater Than |
+| <,> | Logical Less/Greater Than |
+| <=,>= | Logical Less/Greater Than Equals |
 | <<, >> | Bitwise shift operators, shift the binary value the specified number of spaces left or right |
 | Signed(#) | Treats # as an 8bit signed |
 | Int16(A,B) | Converts A & B to a 16-bit Int (A*256 + B) |
