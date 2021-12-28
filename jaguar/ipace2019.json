@@ -1,0 +1,116 @@
+{
+  "init_commands": {
+    "command": ["ATZ", "ATD", "ATE0", "ATS0", "ATAL"]
+  },
+  "data_commands": {
+    "command": [
+      "ATSH7E4",
+      "ATFCSH7E4",
+      "22490C",
+      "22490F",
+      "224918",
+      "224910",
+      "224907",
+      "22DD01",
+      "22DD09",
+      "ATSH7E5",
+      "ATFCSH7E5",
+      "22FE0C",
+      "ATSH732",
+      "ATFCSH732",
+      "22D928",
+      "ATSH733",
+      "ATFCSH733",
+      "229924"
+    ]
+  },
+  "obd_protocol": "7",
+  "current": {
+    "equation": "((A*256+B)-32768)/40",
+    "minValue": "-300",
+    "maxValue": "1000",
+    "type": "Number",
+    "command": "22490C",
+    "ecu": "7E4"
+  },
+  "voltage": {
+    "equation": "(A*256+B)/100",
+    "minValue": "300",
+    "maxValue": "450",
+    "type": "Number",
+    "command": "22490F",
+    "ecu": "7E4"
+  },
+  "soh": {
+    "equation": "A/2",
+    "minValue": "0",
+    "maxValue": "100",
+    "type": "Number",
+    "command": "224918",
+    "ecu": "7E4"
+  },
+  "soc": {
+    "equation": "(((A*256+B)/100)-2.35)/93.9*100",
+    "minValue": "0",
+    "maxValue": "100",
+    "type": "Number",
+    "command": "224910",
+    "ecu": "7E4"
+  },
+  "batt_temp": {
+    "equation": "(A/2)-40",
+    "minValue": "-40",
+    "maxValue": "80",
+    "type": "Number",
+    "command": "224907",
+    "ecu": "7E4"
+  },
+  "odometer": {
+    "equation": "(A*65536+B*256+C)",
+    "minValue": "0",
+    "maxValue": "1000000",
+    "type": "Number",
+    "command": "22DD01",
+    "ecu": "7E4"
+  },
+  "vehicle_reported_speed": {
+    "equation": "A",
+    "minValue": "0",
+    "maxValue": "220",
+    "type": "Number",
+    "command": "22DD09",
+    "ecu": "7E4"
+  },
+  "is_charging": {
+    "equation": "(A==6)&&((B==133)||(B==32)||(B==11)||(B==12))",
+    "minValue": "0",
+    "maxValue": "1",
+    "type": "Boolean",
+    "command": "22FE0C",
+    "ecu": "7E5"
+  },
+  "is_dcfc": {
+    "equation": "(A==6)&&((B==11)||(B==12))",
+    "minValue": "0",
+    "maxValue": "1",
+    "type": "Boolean",
+    "command": "22FE0C",
+    "ecu": "7E5"
+  },
+  "ext_temp": {
+    "equation": "(A/2)-40",
+    "minValue": "-40",
+    "maxValue": "80",
+    "type": "Number",
+    "command": "229924",
+    "ecu": "733"
+  },
+  "is_parked": {
+    "equation": "{A:0}",
+    "minValue": "0",
+    "maxValue": "1",
+    "type": "Boolean",
+    "command": "22D928",
+    "ecu": "732"
+  }
+}

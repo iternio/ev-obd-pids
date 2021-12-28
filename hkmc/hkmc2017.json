@@ -30,7 +30,7 @@
         "ecu": "7E4"
     },
     "voltage": {
-        "equation": "((m<8)+n)/10",
+        "equation": "((m<<8)+n)/10",
         "minValue": "268.8",
         "maxValue": "403.2",
         "type": "Number",
@@ -38,7 +38,7 @@
         "ecu": "7E4"
     },
     "kwh_charged": {
-        "equation": "((am<24)+(an<16)+(ao<8)+ap)/10",
+        "equation": "((am<<24)+(an<<16)+(ao<<8)+ap)/10",
         "minValue": "0",
         "maxValue": "1000000",
         "type": "Number",
@@ -86,7 +86,7 @@
         "ecu": "7E4"
     },
     "soh": {
-        "equation": "((z<8)+aa)/10",
+        "equation": "((z<<8)+aa)/10",
         "minValue": "0",
         "maxValue": "100",
         "type": "Number",

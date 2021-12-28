@@ -28,7 +28,7 @@
         "ecu": "7E4"
     },
     "voltage": {
-        "equation": "((N<8)+O)/10",
+        "equation": "((N<<8)+O)/10",
         "minValue": "550",
         "maxValue": "950",
         "type": "Number",
@@ -36,7 +36,7 @@
         "ecu": "7E4"
     },
     "kwh_charged": {
-        "equation": "((an<24)+(ao<16)+(ap<8)+aq)/10",
+        "equation": "((an<<24)+(ao<<16)+(ap<<8)+aq)/10",
         "minValue": "0",
         "maxValue": "1000000",
         "type": "Number",
@@ -44,7 +44,7 @@
         "ecu": "7E4"
     },
     "_Cumulative_Energy_Discharged": {
-        "equation": "((ar<24)+(as<16)+(at<8)+au)/10",
+        "equation": "((ar<<24)+(as<<16)+(at<<8)+au)/10",
         "minValue": "0",
         "maxValue": "1000000",
         "type": "Number",
@@ -132,7 +132,7 @@
         "ecu": "7E4"
     },
     "soh": {
-        "equation": "((aa<8)+ab)/10",
+        "equation": "((aa<<8)+ab)/10",
         "minValue": "0",
         "maxValue": "100",
         "type": "Number",

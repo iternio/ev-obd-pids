@@ -29,7 +29,7 @@
     "ecu": "7E4"
   },
   "voltage": {
-    "equation": "((A<8)+B)*0.01",
+    "equation": "((A<<8)+B)*0.01",
     "minValue": "300",
     "maxValue": "500",
     "type": "Number",
@@ -93,7 +93,7 @@
     "ecu": "7E6"
   },
   "vehicle_reported_speed": {
-    "equation": "((A<8)+B)/128",
+    "equation": "((A<<8)+B)/128",
     "minValue": "0",
     "maxValue": "200",
     "type": "Number",

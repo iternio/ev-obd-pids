@@ -23,7 +23,7 @@
     ]
   },
   "current": {
-    "equation": "((A<32+B<16+C<8+D-150000)/100)*-1",
+    "equation": "((A<<32+B<<16+C<<8+D-150000)/100)*-1",
     "minValue": "-500",
     "maxValue": "300",
     "type": "Number",

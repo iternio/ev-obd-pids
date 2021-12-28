@@ -20,8 +20,12 @@ If you'd like to add your own PID list here please submit a pull request to the 
 | \|\| | Logical Or|
 | && | Logical And |
 | == | Logical Equals|
-| <, > | Bitwise shift operators, shift the binary value the specified number of spaces left or right |
+| < | Logical Less Than |
+| > | Logical Greater Than |
+| <<, >> | Bitwise shift operators, shift the binary value the specified number of spaces left or right |
 | Signed(#) | Treats # as an 8bit signed |
+| Int16(A,B) | Converts A & B to a 16-bit Int (A*256 + B) |
+| Int24(A,B,C) | Converts A, B, & C to a 24-bit Int (A\*65536 + B\*256 + C) |
 | {A:#} | #th bit of byte A from right (least significant digit) |
 ## Licenses
 This repository is licensed by Apache 2.0, except where superceded by individual licenses from the various sources.  A LICENSE file will be placed in any sub-directory where applicable.
