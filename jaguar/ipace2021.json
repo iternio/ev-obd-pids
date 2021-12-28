@@ -37,8 +37,7 @@
         "maxValue": "1000",
         "type": "Number",
         "command": "22490C",
-        "ecu": "7E4",
-        "replace": "62490C"
+        "ecu": "7E4"
     },
     "voltage": {
         "equation": "(A*256+B)/100",
@@ -46,8 +45,7 @@
         "maxValue": "450",
         "type": "Number",
         "command": "22490F",
-        "ecu": "7E4",
-        "replace": "62490F"
+        "ecu": "7E4"
     },
     "soh": {
         "equation": "A/2",
@@ -55,8 +53,7 @@
         "maxValue": "100",
         "type": "Number",
         "command": "224918",
-        "ecu": "7E4",
-        "replace": "624918"
+        "ecu": "7E4"
     },
     "soc": {
         "equation": "(((A*256+B)/100)*1.07)-2.7",
@@ -64,8 +61,7 @@
         "maxValue": "100",
         "type": "Number",
         "command": "224910",
-        "ecu": "7E4",
-        "replace": "624910"
+        "ecu": "7E4"
     },
     "batt_temp": {
         "equation": "(A/2)-40",
@@ -73,8 +69,7 @@
         "maxValue": "80",
         "type": "Number",
         "command": "224907",
-        "ecu": "7E4",
-        "replace": "624907"
+        "ecu": "7E4"
     },
     "odometer": {
         "equation": "(A*65536+B*256+C)",
@@ -82,8 +77,7 @@
         "maxValue": "1000000",
         "type": "Number",
         "command": "22DD01",
-        "ecu": "7E4",
-        "replace": "62DD01"
+        "ecu": "7E4"
     },
     "vehicle_reported_speed": {
         "equation": "A",
@@ -91,8 +85,7 @@
         "maxValue": "220",
         "type": "Number",
         "command": "22DD09",
-        "ecu": "7E4",
-        "replace": "62DD09"
+        "ecu": "7E4"
     },
     "is_charging": {
         "equation": "(B==29)||(B==48)",
@@ -100,8 +93,7 @@
         "maxValue": "1",
         "type": "Boolean",
         "command": "22FD37",
-        "ecu": "7E5",
-        "replace": "62FD37"
+        "ecu": "7E5"
     },
     "is_dcfc": {
         "equation": "(B==29)",
@@ -109,8 +101,7 @@
         "maxValue": "1",
         "type": "Boolean",
         "command": "22FD37",
-        "ecu": "7E5",
-        "replace": "62FD37"
+        "ecu": "7E5"
     },
     "ext_temp": {
         "equation": "(A/2)-40",
@@ -118,8 +109,7 @@
         "maxValue": "80",
         "type": "Number",
         "command": "229924",
-        "ecu": "7E3",
-        "replace": "629924"
+        "ecu": "7E3"
     },
     "is_parked": {
         "equation": "{A:0}",
@@ -127,7 +117,6 @@
         "maxValue": "1",
         "type": "Boolean",
         "command": "22D928",
-        "ecu": "732",
-        "replace": "62D928"
+        "ecu": "732"
     }
 }
