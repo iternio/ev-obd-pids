@@ -3,6 +3,26 @@ This repository contains a consolidation of the various OBD PID lists that are a
 
 Many thanks to the hard work by those who have reverse engineered the PIDs for various manufacturers and contributed to this repository.
 
+## Adding Support
+If you'd like to add your own PID list here please submit a pull request to the repository.  We have support for equation parsing similar to Torque Pro (and more can be added if needed).
+
+### Structure of the PID List:
+- `init_commands` - List of commands sent to initialize the OBD dongle.  
+- `obd_protocol` - Which OBD protocol is used by your car. Typically 6 or 7 from our experience.  
+- `data_commands` - A list of unique OBD commands, these will be sent in order with the results passed to all matching PIDs and their formulas.  
+- All other entries are the individual PIDs, and their keys (names) must match those in the [Telemetry API documentation](https://documenter.getpostman.com/view/7396339/SWTK5a8w).
+
+### Supported equations
+| Equation Element| Description |
+| --- | --- |
+| A - ZZZ | Data value from a PID request |
+| *, /, +, - | Multiplication, Division, Addition, Subtraction |
+| \|\| | Logical Or|
+| && | Logical And |
+| == | Logical Equals|
+| <, > | Bitwise shift operators, shift the binary value the specified number of spaces left or right |
+| Signed(#) | Treats # as an 8bit signed |
+| {A:#} | #th bit of byte A from right (least significant digit) |
 ## Licenses
 This repository is licensed by Apache 2.0, except where superceded by individual licenses from the various sources.  A LICENSE file will be placed in any sub-directory where applicable.
 
