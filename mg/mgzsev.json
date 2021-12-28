@@ -1,0 +1,105 @@
+{
+  "init_commands": {
+    "command": ["ATZ", "ATD", "ATE0", "ATS0", "ATAL"]
+  },
+  "data_commands": {
+    "command": [
+      "ATSH781",
+      "ATFCSH781",
+      "22B042",
+      "22B043",
+      "22B061",
+      "22B046",
+      "22B056",
+      "22B048",
+      "ATSH7E3",
+      "ATFCSH7E3",
+      "22BA00",
+      "22BB05",
+      "ATSH760",
+      "ATFCSH760",
+      "22B101"
+    ]
+  },
+  "obd_protocol": "6",
+  "current": {
+    "equation": "((A*256+B)-40000)*0.25/10",
+    "minValue": "-300",
+    "maxValue": "1000",
+    "type": "Number",
+    "command": "22B043",
+    "ecu": "781"
+  },
+  "voltage": {
+    "equation": "(A*256+B)*0.25",
+    "minValue": "300",
+    "maxValue": "450",
+    "type": "Number",
+    "command": "22B042",
+    "ecu": "781"
+  },
+  "soh": {
+    "equation": "(A*256+B)/100",
+    "minValue": "0",
+    "maxValue": "100",
+    "type": "Number",
+    "command": "22B061",
+    "ecu": "781"
+  },
+  "soc": {
+    "equation": "(A*256+B)/100",
+    "minValue": "0",
+    "maxValue": "100",
+    "type": "Number",
+    "command": "22B046",
+    "ecu": "781"
+  },
+  "batt_temp": {
+    "equation": "(A/2)-40",
+    "minValue": "-40",
+    "maxValue": "80",
+    "type": "Number",
+    "command": "22B056",
+    "ecu": "781"
+  },
+  "is_charging": {
+    "equation": "(A==6)||(A==7)",
+    "minValue": "0",
+    "maxValue": "1",
+    "type": "Boolean",
+    "command": "22B048",
+    "ecu": "781"
+  },
+  "is_dcfc": {
+    "equation": "(A==7)",
+    "minValue": "0",
+    "maxValue": "1",
+    "type": "Boolean",
+    "command": "22B048",
+    "ecu": "781"
+  },
+  "odometer": {
+    "equation": "(A*65536+B*256+C)",
+    "minValue": "0",
+    "maxValue": "1000000",
+    "type": "Number",
+    "command": "22B101",
+    "ecu": "760"
+  },
+  "vehicle_reported_speed": {
+    "equation": "((A*256+B)-20000)/100",
+    "minValue": "0",
+    "maxValue": "220",
+    "type": "Number",
+    "command": "22BA00",
+    "ecu": "7E3"
+  },
+  "ext_temp": {
+    "equation": "A-40",
+    "minValue": "-40",
+    "maxValue": "80",
+    "type": "Number",
+    "command": "22BB05",
+    "ecu": "7E3"
+  }
+}
