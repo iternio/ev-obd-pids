@@ -5,36 +5,33 @@
   "obd_protocol": "7",
   "data_commands": {
     "command": [
-      "ATSH7E0",
-      "221505",
       "ATSH7E2",
-      "22480D",
+      "224850",
       "224851",
+      "224845"
       "22DD05",
+      "221E12",
       "ATSH7E4",
       "224800",
-      "2248F9",
-      "22490C",
-      "224845",
-      "ATSH7E6",
-      "221E12"
+      "22480B",
+      "22D115"
     ]
   },
   "current": {
-    "equation": "((signed(A)*256)+B)*0.1",
+    "equation": "((signed(A)*256)+B)*0.02",
     "minValue": "-500",
     "maxValue": "300",
     "type": "Number",
-    "command": "2248F9",
+    "command": "22480B",
     "ecu": "7E4"
   },
   "voltage": {
     "equation": "((A<<8)+B)*0.01",
-    "minValue": "300",
-    "maxValue": "500",
+    "minValue": "200",
+    "maxValue": "400",
     "type": "Number",
-    "command": "22480D",
-    "ecu": "7E4"
+    "command": "224850",
+    "ecu": "7E2"
   },
   "ext_temp": {
     "equation": "A-40",
@@ -53,7 +50,7 @@
     "ecu": "7E4"
   },
   "is_charging": {
-    "equation": "(A==6)||(A==8)",
+    "equation": "A==2",
     "minValue": "0",
     "maxValue": "1",
     "type": "Boolean",
@@ -68,21 +65,13 @@
     "command": "224851",
     "ecu": "7E2"
   },
-  "soh": {
-    "equation": "A*0.5",
-    "minValue": "-5",
-    "maxValue": "105",
-    "type": "Number",
-    "command": "22490C",
-    "ecu": "7E4"
-  },
   "soc": {
     "equation": "A*0.5",
     "minValue": "-5",
     "maxValue": "105",
     "type": "Number",
     "command": "224845",
-    "ecu": "7E4"
+    "ecu": "7E2"
   },
   "is_parked": {
     "equation": "A==70",
@@ -90,14 +79,14 @@
     "maxValue": "1",
     "type": "Boolean",
     "command": "221E12",
-    "ecu": "7E6"
+    "ecu": "7E2"
   },
   "vehicle_reported_speed": {
     "equation": "((A<<8)+B)/128",
     "minValue": "0",
     "maxValue": "200",
     "type": "Number",
-    "command": "221505",
-    "ecu": "7E0"
+    "command": "22D115",
+    "ecu": "7E4"
   }
 }
