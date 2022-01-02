@@ -86,7 +86,7 @@
   "ford:ffe*": {
     "supports": ["calibration", "driving", "charging"],
     "pids": "FFE"
-    "groups": ["devel"]
+    "groups": ["tester"]
   },
   "tesla:*": {
     "supports": ["calibration", "driving", "charging"],
