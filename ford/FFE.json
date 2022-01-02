@@ -50,7 +50,7 @@
     "ecu": "7E4"
   },
   "is_charging": {
-    "equation": "A==2",
+    "equation": "(A==2)||(A==8)",
     "minValue": "0",
     "maxValue": "1",
     "type": "Boolean",
