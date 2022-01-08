@@ -46,7 +46,7 @@
     "ecu": "607"
   },
   "current": {
-    "equation": "((signed(C)*256)+D)*0.01",
+    "equation": "-0.01*((signed(C)*256)+D)",
     "minValue": "-300",
     "maxValue": "300",
     "type": "Number",
