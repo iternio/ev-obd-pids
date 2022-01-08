@@ -37,7 +37,7 @@
     "ecu": "607"
   },
   "voltage": {
-    "equation": "(F*256+G)*0.01",
+    "equation": "INT16(A:B)*0.01",
     "minValue": "300",
     "maxValue": "450",
     "type": "Number",
@@ -45,7 +45,7 @@
     "ecu": "607"
   },
   "current": {
-    "equation": "((signed(K)*256)+L)*0.01",
+    "equation": "((signed(C)*256)+D)*0.01",
     "minValue": "-300",
     "maxValue": "300",
     "type": "Number",
@@ -53,7 +53,7 @@
     "ecu": "607"
   },
   "soh": {
-    "equation": "L",
+    "equation": "D",
     "minValue": "0",
     "maxValue": "100",
     "type": "Number",
@@ -61,7 +61,7 @@
     "ecu": "607"
   },
     "batt_temp": {
-    "equation": "(signed(M)*256+N)",
+    "equation": "(signed(E)*256+F)",
     "minValue": "-40",
     "maxValue": "80",
     "type": "Number",
