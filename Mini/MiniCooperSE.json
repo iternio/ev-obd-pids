@@ -11,16 +11,16 @@
 	"ATBI",
 	"ATSH6F1",
 	"ATAT0",
-	"ATSTFF"
+	"ATSTFF",
+	"ATCRA607",
+        "ATCEA07",
+        "ATFCSH6F1",
+        "ATFCSD07300800",
+        "ATFCSM1"
 	]
   },
   "data_commands": {
     "command": [
-      "ATCRA607",
-      "ATCEA07",
-      "ATFCSH6F1",
-      "ATFCSD07300800",
-      "ATFCSM1",
       "22DDBC",
       "22DD68",
       "22DD69",
