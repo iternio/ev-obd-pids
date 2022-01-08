@@ -61,7 +61,7 @@
     "ecu": "607"
   },
     "batt_temp": {
-    "equation": "(signed(E)*256+F)",
+    "equation": "(signed(E)*256+F)/100",
     "minValue": "-40",
     "maxValue": "80",
     "type": "Number",
