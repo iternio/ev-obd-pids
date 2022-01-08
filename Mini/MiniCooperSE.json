@@ -29,7 +29,7 @@
   },
   "obd_protocol": "6",
   "soc": {
-    "equation": "(G*256+H)*0.1",
+    "equation": "INT16(A:B)*0.1",
     "minValue": "0",
     "maxValue": "100",
     "type": "Number",
