@@ -27,7 +27,7 @@
       "226335"
     ]
   },
-  "obd_protocol": "6",
+  "obd_protocol": "B",
   "soc": {
     "equation": "INT16(A:B)*0.1",
     "minValue": "0",
