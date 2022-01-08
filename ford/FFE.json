@@ -26,7 +26,7 @@
     "ecu": "7E4"
   },
   "voltage": {
-    "equation": "((A<<8)+B)*0.01",
+    "equation": "int16(A:B)*0.01",
     "minValue": "200",
     "maxValue": "400",
     "type": "Number",
