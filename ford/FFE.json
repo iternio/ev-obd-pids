@@ -82,7 +82,7 @@
     "ecu": "7E2"
   },
   "vehicle_reported_speed": {
-    "equation": "((A<<8)+B)/128",
+    "equation": "int16(A:B)/128",
     "minValue": "0",
     "maxValue": "200",
     "type": "Number",
