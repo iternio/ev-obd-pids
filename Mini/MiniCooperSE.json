@@ -1,0 +1,72 @@
+{
+  "init_commands": {
+    "command": [
+	"ATZ", 
+	"ATD", 
+	"ATE0", 
+	"ATS0", 
+	"ATAL",
+	"ATPBE101",
+	"ATSPB",
+	"ATBI",
+	"ATSH6F1",
+	"ATAT0",
+	"ATST0F",
+	"ATCRA607",
+        "ATCEA07",
+        "ATFCSH6F1",
+        "ATFCSD07300800",
+        "ATFCSM1"
+	]
+  },
+  "data_commands": {
+    "command": [
+      "22DDBC",
+      "22DD68",
+      "22DD69",
+      "226335",
+      "22DDC0"
+    ]
+  },
+  "obd_protocol": "B",
+  "soc": {
+    "equation": "INT16(A:B)*0.1",
+    "minValue": "0",
+    "maxValue": "100",
+    "type": "Number",
+    "command": "22DDBC",
+    "ecu": "607"
+  },
+  "voltage": {
+    "equation": "INT16(A:B)*0.01",
+    "minValue": "300",
+    "maxValue": "450",
+    "type": "Number",
+    "command": "22DD68",
+    "ecu": "607"
+  },
+  "current": {
+    "equation": "-0.01*((signed(C)*256)+D)",
+    "minValue": "-300",
+    "maxValue": "300",
+    "type": "Number",
+    "command": "22DD69",
+    "ecu": "607"
+  },
+  "soh": {
+    "equation": "D",
+    "minValue": "0",
+    "maxValue": "100",
+    "type": "Number",
+    "command": "226335",
+    "ecu": "607"
+  },
+    "batt_temp": {
+    "equation": "(signed(E)*256+F)/100",
+    "minValue": "-40",
+    "maxValue": "80",
+    "type": "Number",
+    "command": "22DDC0",
+    "ecu": "607"
+  }
+}
