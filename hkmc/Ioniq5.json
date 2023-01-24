@@ -92,7 +92,7 @@
         "ecu": "7E4"
     },
     "_Bat_Min_Temp": {
-        "equation": "Signed(q)",
+        "equation": "Signed(p)",
         "minValue": "-40",
         "maxValue": "80",
         "type": "Number",
@@ -100,7 +100,7 @@
         "ecu": "7E4"
     },
     "_Bat_Max_Temp": {
-        "equation": "Signed(p)",
+        "equation": "Signed(o)",
         "minValue": "-40",
         "maxValue": "80",
         "type": "Number",
