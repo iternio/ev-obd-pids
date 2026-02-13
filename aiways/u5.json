@@ -1,0 +1,94 @@
+{
+  "init_commands": {
+    "command": ["ATD0", "ATE0", "ATSP6", "ATM0", "ATS0", "ATAL", "ATAT1", "ATST64", "ATSH703"]
+  },
+  "obd_protocol": "7",
+  "data_commands": {
+    "command": [
+      "221000",
+      "221001",
+      "221002",
+      "221004",
+      "221005",
+      "221006",
+      "221007",
+      "221009",
+      "221010",
+      "221202",
+      "221012",
+      "22DF05"
+    ]
+  },
+  "current": {
+    "equation": "(((signed(A)*256)+B)-7000)/10",
+    "minValue": "-500",
+    "maxValue": "300",
+    "type": "Number",
+    "command": "221005",
+    "ecu": ""
+  },
+  "voltage": {
+    "equation": "((A<<8)+B)*0.01",
+    "minValue": "300",
+    "maxValue": "500",
+    "type": "Number",
+    "command": "22480D",
+    "ecu": "7E4"
+  },
+  "batt_temp": {
+    "equation": "A-40",
+    "minValue": "-40",
+    "maxValue": "100",
+    "type": "Number",
+    "command": "221002",
+    "ecu": ""
+  },
+  "is_charging": {
+    "equation": "(A==6)||(A==8)",
+    "minValue": "0",
+    "maxValue": "1",
+    "type": "Boolean",
+    "command": "224851",
+    "ecu": "7E2"
+  },
+  "is_dcfc": {
+    "equation": "A==8",
+    "minValue": "0",
+    "maxValue": "1",
+    "type": "Boolean",
+    "command": "224851",
+    "ecu": "7E2"
+  },
+  "soh": {
+    "equation": "A*0.5",
+    "minValue": "-5",
+    "maxValue": "105",
+    "type": "Number",
+    "command": "22490C",
+    "ecu": "7E4"
+  },
+  "soc": {
+    "equation": "A*0.5",
+    "minValue": "-5",
+    "maxValue": "105",
+    "type": "Number",
+    "command": "224845",
+    "ecu": "7E4"
+  },
+  "odometer": {
+    "equation": "(A*65536+B*256+C)/10",
+    "minValue": "0",
+    "maxValue": "1000000",
+    "type": "Number",
+    "command": "22DF05",
+    "ecu": ""
+  },
+  "vehicle_reported_speed": {
+    "equation": "((A<<8)+B)/128",
+    "minValue": "0",
+    "maxValue": "200",
+    "type": "Number",
+    "command": "221505",
+    "ecu": "7E0"
+  }
+}

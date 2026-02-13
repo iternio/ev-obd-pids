@@ -1,4 +1,8 @@
 {
+  "aiways:u5:*": {
+    "supports": ["calibration", "driving", "charging"],
+    "pids": "u5"
+  },
   "volkswagen:egolf:*": {
     "supports": ["calibration", "driving", "charging"],
     "pids": "eGolf"
