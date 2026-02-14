@@ -28,12 +28,19 @@
     "ecu": ""
   },
   "voltage": {
-    "equation": "((A<<8)+B)*0.01",
+    "equation": "((signed(A)*256)+B)/10",
     "minValue": "300",
     "maxValue": "500",
     "type": "Number",
     "command": "22480D",
     "ecu": "7E4"
+  },
+  "power": {
+    "equation": "current*voltage",
+    "minValue": "-250",
+    "maxValue": "250",
+    "type": "Number",
+    "ecu": ""
   },
   "batt_temp": {
     "equation": "A-40",
@@ -44,7 +51,7 @@
     "ecu": ""
   },
   "is_charging": {
-    "equation": "(A==6)||(A==8)",
+    "equation": "vehicle_reported_speed==0 && current>0",
     "minValue": "0",
     "maxValue": "1",
     "type": "Boolean",
@@ -60,20 +67,36 @@
     "ecu": "7E2"
   },
   "soh": {
-    "equation": "A*0.5",
-    "minValue": "-5",
-    "maxValue": "105",
+    "equation": "A",
+    "minValue": "0",
+    "maxValue": "100",
     "type": "Number",
-    "command": "22490C",
-    "ecu": "7E4"
+    "command": "221012",
+    "ecu": ""
   },
   "soc": {
-    "equation": "A*0.5",
-    "minValue": "-5",
-    "maxValue": "105",
+    "equation": "A",
+    "minValue": "0",
+    "maxValue": "100",
     "type": "Number",
-    "command": "224845",
-    "ecu": "7E4"
+    "command": "221006",
+    "ecu": ""
+  },
+  "soc_bms": {
+    "equation": "A",
+    "minValue": "0",
+    "maxValue": "100",
+    "type": "Number",
+    "command": "221007",
+    "ecu": ""
+  },
+  "soe": {
+    "equation": "A*63",
+    "minValue": "0",
+    "maxValue": "630",
+    "type": "Number",
+    "command": "221009",
+    "ecu": ""
   },
   "odometer": {
     "equation": "(A*65536+B*256+C)/10",
@@ -84,11 +107,11 @@
     "ecu": ""
   },
   "vehicle_reported_speed": {
-    "equation": "((A<<8)+B)/128",
+    "equation": "((A*256)+b)/100",
     "minValue": "0",
     "maxValue": "200",
     "type": "Number",
-    "command": "221505",
-    "ecu": "7E0"
+    "command": "221202",
+    "ecu": ""
   }
 }
