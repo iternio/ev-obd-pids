@@ -32,8 +32,8 @@
     "minValue": "300",
     "maxValue": "500",
     "type": "Number",
-    "command": "22480D",
-    "ecu": "7E4"
+    "command": "221004",
+    "ecu": ""
   },
   "power": {
     "equation": "current*voltage",
@@ -55,15 +55,6 @@
     "minValue": "0",
     "maxValue": "1",
     "type": "Boolean",
-    "command": "224851",
-    "ecu": "7E2"
-  },
-  "is_dcfc": {
-    "equation": "A==8",
-    "minValue": "0",
-    "maxValue": "1",
-    "type": "Boolean",
-    "command": "224851",
     "ecu": "7E2"
   },
   "soh": {
