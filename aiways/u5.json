@@ -55,7 +55,7 @@
     "minValue": "0",
     "maxValue": "1",
     "type": "Boolean",
-    "ecu": "7E2"
+    "ecu": ""
   },
   "soh": {
     "equation": "A",
