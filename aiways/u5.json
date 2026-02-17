@@ -1,108 +1,96 @@
 {
-  "init_commands": {
-    "command": ["ATD0", "ATE0", "ATSP6", "ATM0", "ATS0", "ATAL", "ATAT1", "ATST64", "ATSH703"]
-  },
-  "obd_protocol": "7",
-  "data_commands": {
-    "command": [
-      "221000",
-      "221001",
-      "221002",
-      "221004",
-      "221005",
-      "221006",
-      "221007",
-      "221009",
-      "221010",
-      "221202",
-      "221012",
-      "22DF05"
-    ]
-  },
-  "current": {
-    "equation": "(((signed(A)*256)+B)-7000)/10",
-    "minValue": "-500",
-    "maxValue": "300",
-    "type": "Number",
-    "command": "221005",
-    "ecu": ""
-  },
-  "voltage": {
-    "equation": "((signed(A)*256)+B)/10",
-    "minValue": "300",
-    "maxValue": "500",
-    "type": "Number",
-    "command": "221004",
-    "ecu": ""
-  },
-  "power": {
-    "equation": "current*voltage",
-    "minValue": "-250",
-    "maxValue": "250",
-    "type": "Number",
-    "ecu": ""
-  },
-  "batt_temp": {
-    "equation": "A-40",
-    "minValue": "-40",
-    "maxValue": "100",
-    "type": "Number",
-    "command": "221002",
-    "ecu": ""
-  },
-  "is_charging": {
-    "equation": "vehicle_reported_speed==0 && current>0",
-    "minValue": "0",
-    "maxValue": "1",
-    "type": "Boolean",
-    "ecu": ""
-  },
-  "soh": {
-    "equation": "A",
-    "minValue": "0",
-    "maxValue": "100",
-    "type": "Number",
-    "command": "221012",
-    "ecu": ""
-  },
-  "soc": {
-    "equation": "A",
-    "minValue": "0",
-    "maxValue": "100",
-    "type": "Number",
-    "command": "221006",
-    "ecu": ""
-  },
-  "soc_bms": {
-    "equation": "A",
-    "minValue": "0",
-    "maxValue": "100",
-    "type": "Number",
-    "command": "221007",
-    "ecu": ""
-  },
-  "soe": {
-    "equation": "A*63",
-    "minValue": "0",
-    "maxValue": "630",
-    "type": "Number",
-    "command": "221009",
-    "ecu": ""
-  },
-  "odometer": {
-    "equation": "(A*65536+B*256+C)/10",
-    "minValue": "0",
-    "maxValue": "1000000",
-    "type": "Number",
-    "command": "22DF05",
-    "ecu": ""
-  },
-  "vehicle_reported_speed": {
-    "equation": "((A*256)+b)/100",
-    "minValue": "0",
-    "maxValue": "200",
-    "type": "Number",
-    "command": "221202",
-    "ecu": ""
-  }
+    "init_commands": {
+        "command": [
+            "ATZ",
+            "ATD0",
+            "ATE0",
+            "ATSP6",
+            "ATM0",
+            "ATS0",
+            "ATAL",
+            "ATAT1",
+            "ATST64",
+            "ATSH703"
+        ]
+    },
+    "obd_protocol": "7",
+    "data_commands": {
+        "command": [
+            "221000",
+            "221001",
+            "221002",
+            "221004",
+            "221005",
+            "221006",
+            "221009",
+            "221010",
+            "221202",
+            "221012",
+            "22DF05"
+        ]
+    },
+    "current": {
+        "equation": "(((signed(A)*256)+B)-7000)/10",
+        "minValue": "-2000",
+        "maxValue": "2000",
+        "type": "Number",
+        "command": "221005",
+        "ecu": ""
+    },
+    "voltage": {
+        "equation": "((signed(A)*256)+B)/10",
+        "minValue": "300",
+        "maxValue": "500",
+        "type": "Number",
+        "command": "221004",
+        "ecu": ""
+    },
+    "batt_temp": {
+        "equation": "A-40",
+        "minValue": "-40",
+        "maxValue": "100",
+        "type": "Number",
+        "command": "221002",
+        "ecu": ""
+    },
+    "soh": {
+        "equation": "A",
+        "minValue": "50",
+        "maxValue": "105",
+        "type": "Number",
+        "command": "221012",
+        "ecu": ""
+    },
+    "soc": {
+        "equation": "A",
+        "minValue": "-5",
+        "maxValue": "105",
+        "type": "Number",
+        "command": "221006",
+        "ecu": ""
+    },
+    "soe": {
+        "equation": "A*6.3",
+        "minValue": "0",
+        "maxValue": "65",
+        "type": "Number",
+        "command": "221009",
+        "ecu": ""
+    },
+    "odometer": {
+        "equation": "(A*65536+B*256+C)/10",
+        "minValue": "0",
+        "maxValue": "1000000",
+        "type": "Number",
+        "command": "22DF05",
+        "ecu": ""
+    },
+    "vehicle_reported_speed": {
+        "equation": "((A*256)+b)/100",
+        "minValue": "0",
+        "maxValue": "200",
+        "type": "Number",
+        "command": "221202",
+        "ecu": ""
+    }
 }
