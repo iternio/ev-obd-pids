@@ -35,6 +35,10 @@
     "supports": ["calibration", "driving", "charging"],
     "pids": "PSA"
   },
+  "vauxhall:mokkae:*": {
+    "supports": ["calibration", "driving", "charging"],
+    "pids": "PSA"
+  },
   "renault:zoe:20*": {
     "supports": ["calibration", "driving", "charging"],
     "pids": "zoe2"
