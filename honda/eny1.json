@@ -30,8 +30,8 @@
     "command": "22202A",
     "equation": "Int16(BF,BG)/50",
     "type": "Number",
-    "maxValue": 500,
-    "minValue": -500
+    "maxValue": 2000,
+    "minValue": -2000
   },
   "ext_temp": {
     "command": "227028",
