@@ -1,0 +1,114 @@
+{
+  "init_commands": {
+    "command": [
+      "ATD",
+      "ATE0",
+      "ATH0",
+      "ATAT1",
+      "ATAL",
+      "ATS0",
+      "ATM0",
+      "ATSH18DA01F1",
+      "ATFCSH18DA01F1",
+      "ATFCSM1"
+    ]
+  },
+  "obd_protocol": "7",
+  "data_commands": {
+    "command": [
+      "ATCRA18DAF101",
+      "22202A",
+      "22202C",
+      "ATSH18DA60F1",
+      "ATCRA18DAF160",
+      "227022",
+      "227028",
+      "ATSH18DA01F1"
+    ]
+  },
+  "current": {
+    "command": "22202A",
+    "equation": "Int16(BF,BG) / 50",
+    "type": "Number",
+    "maxValue": 500,
+    "minValue": -500
+  },
+  "ext_temp": {
+    "command": "227028",
+    "equation": "R - 0",
+    "type": "Number",
+    "minValue": -40,
+    "maxValue": 60
+  },
+  "is_charging": {
+    "command": "22202A",
+    "equation": "ER == 00",
+    "type": "Boolean"
+  },
+  "is_dcfc": {
+    "command": "22202A",
+    "equation": "(ER==0)&&(FJ<252)",
+    "type": "Boolean"
+  },
+  "is_parked": {
+    "command": "224004",
+    "equation": "BB == 1",
+    "type": "Boolean"
+  },
+  "odometer": {
+    "command": "227022",
+    "equation": "Int24(G,H,I)",
+    "type": "Number",
+    "minValue": 0,
+    "maxValue": 200000
+  },
+  "power": {
+    "isVirtual": true,
+    "equation": "current * voltage / 1000",
+    "type": "NUmber",
+    "min": -150,
+    "max": 150
+  },
+  "soc": {
+    "command": "22202A",
+    "equation": "AY",
+    "type": "Number",
+    "minValue": 0,
+    "maxValue": 100
+  },
+  "soe": {
+    "command": "22202A",
+    "equation": "(AY / 100) * 62000",
+    "type": "Number",
+    "minValue": 0,
+    "maxValue": 62000
+  },
+  "speed": {
+    "command": "227022",
+    "equation": "K * 1.60934",
+    "type": "Number",
+    "minValue": 0,
+    "maxValue": 170
+  },
+  "vehicle_reported_speed": {
+    "command": "227022",
+    "equation": "K",
+    "type": "Number",
+    "minValue": 0,
+    "maxValue": 110
+  },
+  "soh": {
+    "command": "22202A",
+    "equation": "II * 100 / 255",
+    "type": "Number",
+    "minValue": 0,
+    "maxValue": 100
+  },
+  "voltage": {
+    "command": "22202A",
+    "equation": "Int16(BD,BE) / 20",
+    "type": "Number",
+    "minValue": 0,
+    "maxValue": 450
+  }
+}
