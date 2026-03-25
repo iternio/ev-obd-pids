@@ -66,8 +66,8 @@
     "command": "22202A",
     "equation": "AY",
     "type": "Number",
-    "minValue": 0,
-    "maxValue": 100
+    "minValue": -5,
+    "maxValue": 105
   },
   "soe": {
     "command": "22202A",
