@@ -94,8 +94,8 @@
     "command": "22202A",
     "equation": "(II*100)/255",
     "type": "Number",
-    "minValue": 0,
-    "maxValue": 100
+    "minValue": 50,
+    "maxValue": 105
   },
   "voltage": {
     "command": "22202A",
