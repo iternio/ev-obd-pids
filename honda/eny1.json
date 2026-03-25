@@ -62,13 +62,6 @@
     "minValue": 0,
     "maxValue": 200000
   },
-  "power": {
-    "isVirtual": true,
-    "equation": "current*voltage/1000",
-    "type": "Number",
-    "min": -150,
-    "max": 150
-  },
   "soc": {
     "command": "22202A",
     "equation": "AY",
