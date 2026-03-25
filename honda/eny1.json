@@ -76,19 +76,12 @@
     "minValue": 0,
     "maxValue": 62000
   },
-  "speed": {
+  "vehicle_reported_speed": {
     "command": "227022",
     "equation": "K*1.60934",
     "type": "Number",
     "minValue": 0,
     "maxValue": 170
-  },
-  "vehicle_reported_speed": {
-    "command": "227022",
-    "equation": "K",
-    "type": "Number",
-    "minValue": 0,
-    "maxValue": 110
   },
   "soh": {
     "command": "22202A",
