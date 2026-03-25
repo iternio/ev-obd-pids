@@ -121,5 +121,9 @@
     "supports": ["calibration", "driving", "charging"],
     "pids": "mgzsev",
     "groups": ["tester"]
-  }
+  },
+  "honda:eny1:26*": {
+    "supports": ["calibration", "driving", "charging"],
+    "pids": "eny1"
+}
 }
