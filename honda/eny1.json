@@ -51,7 +51,7 @@
     "type": "Boolean"
   },
   "is_parked": {
-    "command": "224004",
+    "command": "22202A",
     "equation": "BB==1",
     "type": "Boolean"
   },
