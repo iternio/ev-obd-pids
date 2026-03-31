@@ -93,7 +93,7 @@
   },
   "voltage": {
     "command": "22202A",
-    "equation": "((BD<<8)+BE) / 20",
+    "equation": "((BD<<8)+BE)/20",
     "type": "Number",
     "minValue": 0,
     "maxValue": 450
