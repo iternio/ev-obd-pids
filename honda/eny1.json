@@ -16,6 +16,7 @@
   "obd_protocol": "7",
   "data_commands": {
     "command": [
+      "ATSH18DA60F1",
       "ATCRA18DAF101",
       "22202A",
       "22202C",
