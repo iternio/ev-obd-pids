@@ -28,7 +28,7 @@
   },
   "current": {
     "command": "22202A",
-    "equation": "Int16(BF,BG)/50",
+    "equation": "((Signed(BF)*256)+BG)/50",
     "type": "Number",
     "maxValue": 2000,
     "minValue": -2000
