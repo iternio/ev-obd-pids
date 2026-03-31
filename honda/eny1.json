@@ -58,7 +58,7 @@
   },
   "odometer": {
     "command": "227022",
-    "equation": "Int24(G,H,I)*1.60934",
+    "equation": "((G<<16)+(H<<8)+I)*1.60934",
     "type": "Number",
     "minValue": 0,
     "maxValue": 200000
