@@ -36,7 +36,7 @@
   },
   "ext_temp": {
     "command": "227028",
-    "equation": "R-0",
+    "equation": "R",
     "type": "Number",
     "minValue": -40,
     "maxValue": 60
