@@ -1,0 +1,101 @@
+{
+  "init_commands": {
+    "command": [
+      "ATD",
+      "ATE0",
+      "ATH0",
+      "ATAT1",
+      "ATAL",
+      "ATS0",
+      "ATM0",
+      "ATSH18DA01F1",
+      "ATFCSH18DA01F1",
+      "ATFCSM1"
+    ]
+  },
+  "obd_protocol": "7",
+  "data_commands": {
+    "command": [
+      "ATSH18DA60F1",
+      "ATCRA18DAF101",
+      "22202A",
+      "22202C",
+      "ATSH18DA60F1",
+      "ATCRA18DAF160",
+      "224004",
+      "227022",
+      "227028"
+    ]
+  },
+  "current": {
+    "command": "22202A",
+    "equation": "((Signed(BF)*256)+BG)/100",
+    "type": "Number",
+    "maxValue": 2000,
+    "minValue": -2000
+  },
+  "ext_temp": {
+    "command": "227028",
+    "equation": "R",
+    "type": "Number",
+    "minValue": -40,
+    "maxValue": 60
+  },
+  "is_charging": {
+    "command": "22202A",
+    "equation": "ER==0",
+    "type": "Boolean"
+  },
+  "is_dcfc": {
+    "command": "22202A",
+    "equation": "(ER==0)&&(FJ<252)",
+    "type": "Boolean"
+  },
+  "is_parked": {
+    "command": "22202A",
+    "equation": "BB==1",
+    "type": "Boolean"
+  },
+  "odometer": {
+    "command": "227022",
+    "equation": "((G<<16)+(H<<8)+I)*1.60934",
+    "type": "Number",
+    "minValue": 0,
+    "maxValue": 200000
+  },
+  "soc": {
+    "command": "22202A",
+    "equation": "AY",
+    "type": "Number",
+    "minValue": -5,
+    "maxValue": 105
+  },
+  "soe": {
+    "command": "22202A",
+    "equation": "(AY/100)*62000",
+    "type": "Number",
+    "minValue": 0,
+    "maxValue": 62000
+  },
+  "vehicle_reported_speed": {
+    "command": "227022",
+    "equation": "K*1.60934",
+    "type": "Number",
+    "minValue": 0,
+    "maxValue": 170
+  },
+  "soh": {
+    "command": "22202A",
+    "equation": "(II*100)/255",
+    "type": "Number",
+    "minValue": 50,
+    "maxValue": 105
+  },
+  "voltage": {
+    "command": "22202A",
+    "equation": "((BD<<8)+BE)/20",
+    "type": "Number",
+    "minValue": 0,
+    "maxValue": 450
+  }
+}
